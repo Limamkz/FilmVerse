@@ -2530,3 +2530,75 @@ body.light .empty-state { background: #fff; border-color: #e7deef; box-shadow: 0
     .detail-content .description { font-size: 12px; }
     .category-strip .category-art { height: 105px; }
 }
+
+
+/* Ajustes finais: pesquisa do Explorar no tema claro e recuperação de senha. */
+.explore-head .explore-search {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: min(100%, 620px);
+    min-width: 0;
+    padding: 0 16px;
+    border: 1px solid var(--line);
+    background: var(--input-bg, var(--surface));
+    color: var(--text);
+    box-sizing: border-box;
+    transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.explore-head .explore-search > span {
+    flex: 0 0 auto;
+    color: var(--purple);
+    font-size: 23px;
+    line-height: 1;
+}
+.explore-head .explore-search input {
+    display: block;
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    box-shadow: none;
+    color: var(--text);
+    font: inherit;
+    font-size: 14px;
+    appearance: none;
+    -webkit-appearance: none;
+}
+.explore-head .explore-search input:focus {
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+}
+.explore-head .explore-search:focus-within {
+    border-color: var(--purple);
+    box-shadow: 0 0 0 4px rgba(126, 72, 190, .14);
+}
+.explore-head .explore-search input::placeholder { color: var(--muted); opacity: .9; }
+body.light .explore-head .explore-search {
+    background: #fff;
+    border-color: #d9cde7;
+    color: #241a32;
+    box-shadow: 0 5px 18px rgba(55, 29, 83, .06);
+}
+body.light .explore-head .explore-search > span { color: #7132c5; }
+body.light .explore-head .explore-search input { background: transparent; color: #241a32; }
+body.light .explore-head .explore-search input::placeholder { color: #81758e; }
+body.light .explore-head .explore-search:focus-within {
+    border-color: #8c55d5;
+    box-shadow: 0 0 0 4px rgba(113, 50, 197, .13), 0 7px 22px rgba(55, 29, 83, .07);
+}
+.account-forgot-row { margin: 2px 0 12px; font-size: 12px; }
+.account-forgot-row .forgot-link { display: inline-flex; align-items: center; gap: 6px; }
+.recovery-eyebrow { display: inline-block; margin-bottom: 9px; }
+.recovery-message { width: 100%; margin: 0 0 18px; box-sizing: border-box; line-height: 1.55; }
+.recovery-back { line-height: 1.6; }
+.recovery-back a { display: inline-block; }
+@media (max-width: 560px) {
+    .explore-head .explore-search { width: 100%; }
+    .explore-head .explore-search input { font-size: 13px; }
+}

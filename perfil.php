@@ -19,8 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (!$savedPassword || !password_verify($senhaAtual, $savedPassword)) {
         $error = 'A senha atual está incorreta.';
-    } elseif (strlen($novaSenha) < 6) {
-        $error = 'A nova senha precisa ter pelo menos 6 caracteres.';
+    } elseif (strlen($novaSenha) < 8) {
+        $error = 'A nova senha precisa ter pelo menos 8 caracteres.';
     } elseif ($novaSenha !== $confirmarSenha) {
         $error = 'A confirmação da nova senha não confere.';
     } elseif (password_verify($novaSenha, $savedPassword)) {
@@ -70,12 +70,15 @@ require 'includes/header.php';
             </label>
             <label class="field">
                 <span>Nova senha</span>
-                <input type="password" name="nova_senha" autocomplete="new-password" minlength="6" required placeholder="Mínimo de 6 caracteres">
+                <input type="password" name="nova_senha" autocomplete="new-password" minlength="8" required placeholder="Mínimo de 8 caracteres">
             </label>
             <label class="field">
                 <span>Confirmar nova senha</span>
-                <input type="password" name="confirmar_senha" autocomplete="new-password" minlength="6" required placeholder="Digite a nova senha novamente">
+                <input type="password" name="confirmar_senha" autocomplete="new-password" minlength="8" required placeholder="Confirme a nova senha (mínimo de 8 caracteres)">
             </label>
+            <div class="forgot-row account-forgot-row">
+                <a class="forgot-link" href="redefinir-senha.php">Esqueceu sua senha?</a>
+            </div>
             <button class="btn" type="submit">Salvar nova senha</button>
         </form>
     </div>
