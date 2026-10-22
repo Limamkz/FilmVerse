@@ -71,8 +71,11 @@ require 'includes/header.php';
         ];
         foreach ($categories as $category):
         ?>
-            <a class="category-tile" href="explorar.php?categoria=<?= urlencode($category[0]) ?>" style="--category-image: url('<?= e($category[3]) ?>')">
-                <div class="category-symbol"><?= $category[1] ?></div>
+            <a class="category-tile" href="explorar.php?categoria=<?= urlencode($category[0]) ?>">
+                <span class="category-art">
+                    <img src="<?= e($category[3]) ?>" alt="" loading="lazy" onerror="this.closest('.category-art').classList.add('image-unavailable')">
+                </span>
+                <span class="category-symbol" aria-hidden="true"><?= $category[1] ?></span>
                 <strong><?= e($category[0]) ?></strong>
                 <small><?= e($category[2]) ?></small>
             </a>

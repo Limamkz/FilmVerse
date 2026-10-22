@@ -11,8 +11,8 @@ $flash_message = take_flash();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#09070f">
     <title><?= e($page_title) ?> · FilmVerse</title>
-    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="assets/style.css?v=20261020-7">
+    <link rel="icon" href="assets/favicon.svg?v=20261022-2" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/style.css?v=20261022-2">
 </head>
 <body>
     <?php if (basename($_SERVER['PHP_SELF']) === 'index.php' || (($_GET['intro'] ?? '') === '1')): ?>
@@ -74,7 +74,7 @@ $flash_message = take_flash();
                     <summary class="profile-trigger" aria-label="Abrir perfil" title="Meu perfil">
                         <span class="profile-avatar"><?= e(mb_strtoupper(mb_substr($headerUser['nome'] ?? 'U', 0, 1, 'UTF-8'), 'UTF-8')) ?></span>
                         <span class="profile-name"><?= e($headerUser['nome'] ?? 'Perfil') ?></span>
-                        <span class="profile-chevron" aria-hidden="true">⌄</span>
+                        <span class="profile-chevron" aria-hidden="true"></span>
                     </summary>
                     <div class="profile-dropdown">
                         <div class="profile-dropdown-heading">
